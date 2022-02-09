@@ -165,8 +165,41 @@ function healPlayerHandler() {
     endRound();
 }
 
+    /*
+       Loops with diferent examples
+       1.- example of for loop:
+       for (i = 0; i < battleLog.length; i++) {
+           console.log(battle.Log[i]);
+       } 
+       2.- example of "for of" loop:
+       for(const logEntry of battleLog) {
+           console.log(logEntry);
+       }
+       3.- example of "for in" loop (nested, using the index):
+       let i = 0;
+        for(const logEntry of battleLog) {
+           console.log(`#${i}`);
+           for(const key in logEntry) {
+               console.log(`${key} => ${logEntry[key]}`);
+           }
+           i++;
+       }
+       4.- example of a while loop:
+    */
+
 function printLogHandler() {
+    //the console.log bellow shows the object.
     console.log(battleLog);
+
+    //the nested loop bellow shows the object organized and the index 
+    let i = 0;
+    for(const logEntry of battleLog) {
+       console.log(`#${i}`);
+       for(const key in logEntry) {
+           console.log(`${key} => ${logEntry[key]}`);
+       }
+       i++;
+   }
 }
 
 attackBtn.addEventListener('click', attackHandler);
